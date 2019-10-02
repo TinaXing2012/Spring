@@ -13,4 +13,9 @@
     <context:component-scan base-package="xing.rujuan"></context:component-scan>
     <mvc:annotation-driven />
 
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp" />
+    </bean>
+
 </beans>

@@ -8,6 +8,6 @@ public class WelcomeController {
 
     @RequestMapping("/")
     public String welcome(){
-        return "/WEB-INF/jsp/welcome.jsp";
+        return "welcome";
     }
 }
