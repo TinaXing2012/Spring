@@ -15,6 +15,10 @@
 <form action="signup" method="post">
     <p>First Name: <input name="firstName"></p>
     <p>Last Name: <input name="lastName"></p>
+    <p>Address:</p>
+    <input name="address"/>
+    <p>Street: <input name="address.street"></p>
+    <p>ZipCode: <input name="address.zipcode"></p>
     <input type="submit" value="Sign Up" />
 </form>
 
