@@ -19,6 +19,16 @@
     <p>First Name: <form:input path="first" /></p>
     <p>Last Name: <form:input path="last" /></p>
     <p>Phone Number: <form:input path="phone" /></p>
+    <p>Select your country:
+        <%--<form:select path="country.id" items="${countryList}"/>--%>
+        <%--<form:select path="country.id" items="${countryMap}"/>--%>
+        <%--<form:select path="country.id" items="${countryObjList}" itemLabel="id" itemValue="name"/>--%>
+
+        <form:select path="country.id">
+            <form:option value="----">Please select a Category</form:option>
+            <form:options items="${countryObjList}" itemLabel="id" itemValue="name"></form:options>
+        </form:select>
+    </p>
 
     <input type="submit" value="Add Customer">
 </form:form>

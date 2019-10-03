@@ -5,6 +5,7 @@ public class Customer {
     private String first;
     private String last;
     private Phone phone;
+    private Country country;
 
     public Customer() {
     }
@@ -37,5 +38,13 @@ public class Customer {
 
     public void setPhone(Phone phone) {
         this.phone = phone;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 }
