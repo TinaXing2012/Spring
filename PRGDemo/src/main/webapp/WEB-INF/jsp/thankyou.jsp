@@ -13,5 +13,8 @@
 <body>
 <h1>You placed order successfully....</h1>
 
+<p>Product Purchased: ${order.productName}</p>
+<p>Product purchased quantity: ${order.quantity}</p>
+
 </body>
 </html>
