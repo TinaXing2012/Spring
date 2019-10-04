@@ -52,7 +52,25 @@ public class CustomerController {
         Phone p = new Phone("123", "456", "7890");
         Customer customer = new Customer("Tina", "Xing", p);
         model.addAttribute("customer", customer);
+
         return "customerEditForm";
     }
+
+    @GetMapping("/editCustomer")
+    public String editCustomer2(Model model){
+        Phone p = new Phone("111", "222", "3333");
+        Customer customer = new Customer("Tina", "Xing", p);
+        model.addAttribute("customer", customer);
+
+        List<Country> countryObjList = Arrays.asList(
+                new Country("US", "United States"),
+                new Country("CN", "China"),
+                new Country("VT", "Vietnam")
+        );
+        model.addAttribute("countryObjList", countryObjList);
+
+        return "customerForm";
+    }
+
 
 }

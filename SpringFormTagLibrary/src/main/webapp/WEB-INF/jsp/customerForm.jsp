@@ -26,7 +26,7 @@
 
         <form:select path="country.id">
             <form:option value="----">Please select a Category</form:option>
-            <form:options items="${countryObjList}" itemLabel="id" itemValue="name"></form:options>
+            <form:options items="${countryObjList}" itemLabel="name" itemValue="id"></form:options>
         </form:select>
     </p>
 

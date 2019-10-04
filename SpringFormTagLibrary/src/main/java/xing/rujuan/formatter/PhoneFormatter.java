@@ -23,6 +23,9 @@ public class PhoneFormatter implements Formatter<Phone> {
 
     @Override
     public String print(Phone phone, Locale locale) {
-        return null;
+        String phoneStrDisplayedOnJSPPage = phone.getAreaCode() + "&&" + phone.getPrefix() + "**" + phone.getNumber();
+        System.out.println("Inside PhoneFormatter print() method:");
+        System.out.println("phoneStrDisplayedOnJSPPage: " + phoneStrDisplayedOnJSPPage);
+        return phoneStrDisplayedOnJSPPage;
     }
 }
