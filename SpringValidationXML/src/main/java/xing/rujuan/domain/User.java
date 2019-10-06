@@ -2,16 +2,32 @@ package xing.rujuan.domain;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class User {
 
+    @Size(min=2, max=30, message="Size of the Name must be lie between 2 and 30")
     private String name;
+
+    @Email(message = "Email must follow the formatter: ***@***")
+    @NotBlank(message = "Email must have a value")
     private String email;
+
+    @Min(value = 18, message = "must be greater or equal to 18")
+    @NotNull(message = "Age is a required field.")
     private Integer age;
-    @DateTimeFormat(pattern = "mm-DD-yyyy")
+
+    @NotNull(message = "birthday is a required field.")
+    @DateTimeFormat(pattern = "MM-dd-yyyy")
     private LocalDate birthday;
+
+    @NotBlank(message = "Role must have a value")
     private String role;
+
+    @Valid
     private Address addr;
 
     public String getName() {
