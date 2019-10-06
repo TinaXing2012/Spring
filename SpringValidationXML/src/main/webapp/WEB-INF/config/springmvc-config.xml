@@ -11,11 +11,23 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="xing.rujuan" />
-    <mvc:annotation-driven />
+    <mvc:annotation-driven validator="validator"/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp" />
     </bean>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames" value="classpath:errorMessages, classpath:messages" />
+    </bean>
+
+    <bean id="validator"
+          class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="validationMessageSource" ref="messageSource" />
+    </bean>
+
+
 
 </beans>

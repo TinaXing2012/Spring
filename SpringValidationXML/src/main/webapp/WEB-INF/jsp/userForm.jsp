@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <title>Add A new User</title>
@@ -18,12 +19,14 @@
 </head>
 <body>
 
-<h1>Add a new User</h1>
+<h1><spring:message code="userForm.title" /></h1>
 <form:form modelAttribute="newUser">
     <form:errors path="*" cssClass="error"/>
-    <p>User Name: <form:input path="name"/><form:errors path="name" cssClass="error"/></p>
-    <p>Email: <form:input path="email"/><form:errors path="email" cssClass="error"/></p>
-    <p>Birthday: <form:input path="birthday"/><form:errors path="birthday" cssClass="error"/></p>
+    <p><spring:message code="user.name" /><form:input path="name"/><form:errors path="name" cssClass="error"/></p>
+    <p><spring:message code="user.email"/>
+   <form:input path="email"/><form:errors path="email" cssClass="error"/></p>
+    <p><spring:message code="user.birthday" text="My Birthday"/>
+        <form:input path="birthday"/><form:errors path="birthday" cssClass="error"/></p>
     <p>Age: <form:input path="age"/><form:errors path="age" cssClass="error"/></p>
     <p>Role:
         <form:select path="role">
