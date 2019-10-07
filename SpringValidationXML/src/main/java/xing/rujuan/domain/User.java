@@ -1,12 +1,14 @@
 package xing.rujuan.domain;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import xing.rujuan.validation.Age;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.Date;
 
+@Age(message = "{custom.age.message}")
 public class User {
 
     @Size(min=2, max=30, message = "{abc}")
