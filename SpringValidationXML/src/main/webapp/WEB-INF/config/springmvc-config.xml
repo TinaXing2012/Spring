@@ -28,6 +28,12 @@
         <property name="validationMessageSource" ref="messageSource" />
     </bean>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="xing.rujuan.interceptor.ProcessingTimeInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 
 </beans>
