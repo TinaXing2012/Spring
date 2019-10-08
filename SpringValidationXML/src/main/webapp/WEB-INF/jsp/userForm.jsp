@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-
+<p>Channel Name: ${channel}</p>
 <h1><spring:message code="userForm.title" /></h1>
 <form:form modelAttribute="newUser" enctype="multipart/form-data">
     <form:errors path="*" cssClass="error"/>

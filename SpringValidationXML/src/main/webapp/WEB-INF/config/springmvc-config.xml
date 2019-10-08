@@ -36,7 +36,7 @@
     </mvc:interceptors>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-
+        <property name="maxUploadSize" value="1024000"></property>
     </bean>
     <mvc:default-servlet-handler />
 

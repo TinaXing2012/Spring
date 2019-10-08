@@ -12,6 +12,8 @@
     <title>Success</title>
 </head>
 <body>
+<p>Channel Name: ${channel}</p>
+
 <h1>User Saved Successfully</h1>
 <p>Name: ${savedUser.name}</p>
 <p>Email: ${savedUser.email}</p>
@@ -23,6 +25,7 @@
 <p>Street: ${savedUser.addr.street}</p>
 <p>State: ${savedUser.addr.state}</p>
 <p>Zip Code: ${savedUser.addr.zipcode}</p>
+
 
 </body>
 </html>
