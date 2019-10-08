@@ -1,6 +1,7 @@
 package xing.rujuan.domain;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 import xing.rujuan.validation.Age;
 
 import javax.validation.Valid;
@@ -28,6 +29,8 @@ public class User {
 
     @NotBlank(message = "Role must have a value")
     private String role;
+
+    private MultipartFile profileImage;
 
     @Valid
     private Address addr;
@@ -78,5 +81,13 @@ public class User {
 
     public void setAddr(Address addr) {
         this.addr = addr;
+    }
+
+    public MultipartFile getProfileImage() {
+        return profileImage;
+    }
+
+    public void setProfileImage(MultipartFile profileImage) {
+        this.profileImage = profileImage;
     }
 }

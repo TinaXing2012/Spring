@@ -35,5 +35,9 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+    </bean>
+    <mvc:default-servlet-handler />
 
 </beans>

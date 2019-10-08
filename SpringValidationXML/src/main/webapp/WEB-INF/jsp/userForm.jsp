@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Add A new User</title>
@@ -20,7 +21,7 @@
 <body>
 
 <h1><spring:message code="userForm.title" /></h1>
-<form:form modelAttribute="newUser">
+<form:form modelAttribute="newUser" enctype="multipart/form-data">
     <form:errors path="*" cssClass="error"/>
     <p><spring:message code="user.name" /><form:input path="name"/><form:errors path="name" cssClass="error"/></p>
     <p><spring:message code="user.email"/>
@@ -35,6 +36,8 @@
         </form:select>
         <form:errors path="role" cssClass="error"/>
     </p>
+
+    <p>Profile Image: <from:input path="profileImage" type="file" /></p>
 
     <p>Address Info:</p>
     <p>Street: <form:input path="addr.street"/><form:errors path="addr.street" cssClass="error"/></p>
