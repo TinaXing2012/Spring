@@ -13,5 +13,10 @@
     <context:component-scan base-package="xing.rujuan" />
     <mvc:annotation-driven />
 
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
 
 </beans>
