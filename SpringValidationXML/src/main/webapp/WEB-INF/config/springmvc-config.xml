@@ -33,11 +33,18 @@
             <mvc:mapping path="/**"/>
             <bean class="xing.rujuan.interceptor.ProcessingTimeInterceptor" />
         </mvc:interceptor>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"></property>
+        </bean>
     </mvc:interceptors>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="1024000"></property>
     </bean>
     <mvc:default-servlet-handler />
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en_US"></property>
+    </bean>
 
 </beans>

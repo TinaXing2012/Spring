@@ -20,6 +20,7 @@
 </head>
 <body>
 <p>Channel Name: ${channel}</p>
+<p><a href="?lang=en_US">English</a>|<a href="?lang=zh_CN">Chinese</a></p>
 <h1><spring:message code="userForm.title" /></h1>
 <form:form modelAttribute="newUser" enctype="multipart/form-data">
     <form:errors path="*" cssClass="error"/>
