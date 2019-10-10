@@ -13,14 +13,16 @@
     <context:component-scan base-package="xing.rujuan" />
     <mvc:annotation-driven />
 
-   <!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>-->
+<!--        <property name="suffix" value=".jsp"/>-->
+        <property name="viewNames" value="*.jsp"/>
+        <property name="order" value="1"/>
+    </bean>
 
     <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/thymeleaf/"/>
-        <property name="suffix" value=".html"/>
+<!--        <property name="suffix" value=".html"/>-->
     </bean>
 
     <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
@@ -29,6 +31,8 @@
 
     <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine"/>
+        <property name="viewNames" value="*.html"/>
+        <property name="order" value="0"/>
     </bean>
 
 </beans>

@@ -9,7 +9,17 @@ public class ViewResolverDemoController {
 
     @GetMapping("/")
     public String home(){
-        return "index";
+        return "redirect:/jsp";
+    }
+
+    @GetMapping("/jsp")
+    public String jspDemo(){
+        return "index.jsp";
+    }
+
+    @GetMapping("/thymeleaf")
+    public String thymeleafDemo(){
+        return "index.html";
     }
 
     @ModelAttribute("projectName")
