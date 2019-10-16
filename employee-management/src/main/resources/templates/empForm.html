@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <h1>Add new Employee</h1>
 <form method="post" th:action="@{/addEmp}" th:object="${emp}">
-    <p>ID: <input th:field="*{id}"></p>
-    <p>First Name: <input th:field="*{firstName}"></p>
+    <ul th:if="${#fields.hasErrors('*')}">
+        <li th:each="err : ${#fields.errors('*')}" th:text="${err}" th:class="error">Input is incorrect</li>
+    </ul>
+    <p>ID: <input th:field="*{id}">
+        <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" th:errorclass="error"></span>
+    </p>
+    <p>First Name: <input th:field="*{firstName}">
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:errorclass="error"></span></p>
     <p>Last Name: <input th:field="*{lastName}"></p>
     <p>Address: </p>
-    <p>Street: <input th:field="*{address.street}"></p>
-    <p>State: <input th:field="*{address.state}"></p>
+    <p>Street: <input th:field="*{address.street}">
+        <span th:if="${#fields.hasErrors('address.street')}" th:errors="*{address.street}" th:errorclass="error"></span></p>
+    </p>
+    <p>State: <input th:field="*{address.state}">
+        <span th:if="${#fields.hasErrors('address.state')}" th:errors="*{address.state}" th:errorclass="error"></span></p>
+    </p>
     <p>Zip Code: <input th:field="*{address.zipCode}"></p>
     <input type="submit" value="Add">
 </form>
