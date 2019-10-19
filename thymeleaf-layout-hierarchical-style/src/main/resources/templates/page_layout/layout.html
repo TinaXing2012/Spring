@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/cover/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title layout:title-pattern="$LAYOUT_TITLE-$CONTENT_TITLE">Layout Title</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../static/css/cover.css" th:href="@{/css/cover.css}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto" th:replace="page_layout/header :: header">
+        <div class="inner">
+            <h3 class="masthead-brand">Cover</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="https://getbootstrap.com/docs/4.0/examples/cover/#">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover" layout:fragment="main-content">
+       <h1>This main content will be decorated by the actual page returned in the controller methods.</h1>
+    </main>
+
+    <footer class="mastfoot mt-auto" th:replace="page_layout/footer :: footer">
+        <div class="inner">
+           footer here will be replaced
+        </div>
+    </footer>
+</div>
+
+
+</body></html>
