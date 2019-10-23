@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+import org.springframework.web.servlet.view.xml.MappingJackson2XmlView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,7 @@ public class WebApplicationConfig implements WebMvcConfigurer {
         viewResolver.setContentNegotiationManager(manager);
         List<View> views = new ArrayList<>();
         views.add(jsonView());
+        views.add(new MappingJackson2XmlView());
         viewResolver.setDefaultViews(views);
         return viewResolver;
     }

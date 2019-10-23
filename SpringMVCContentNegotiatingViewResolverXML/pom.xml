@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>xing.rujuan</groupId>
-    <artifactId>SpringMVCContentNegotiatingViewResolver</artifactId>
+    <artifactId>SpringMVCContentNegotiatingViewResolverXML</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -33,19 +33,16 @@
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.10.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>2.10.0</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -84,5 +81,6 @@
             </plugins>
         </pluginManagement>
     </build>
+
 
 </project>
