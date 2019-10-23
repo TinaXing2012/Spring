@@ -18,6 +18,7 @@ public class ProductController {
                 new Product(2L, "Tablet", 229.00),
                 new Product(3L, "Laptop", 329.00)
         );
+        model.addAttribute("author", "Miss Xing");
         model.addAttribute("products", products);
         return "index";
     }

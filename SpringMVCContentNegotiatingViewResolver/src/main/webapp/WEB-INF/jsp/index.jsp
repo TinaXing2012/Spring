@@ -16,6 +16,7 @@
 <body>
 <div class="container">
     <h1>Product List</h1>
+    <h2>Author: ${author}</h2>
     <table class="table">
         <thead>
         <tr>
