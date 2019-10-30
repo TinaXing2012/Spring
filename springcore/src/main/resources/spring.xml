@@ -6,5 +6,5 @@
 
     <bean id="emailService" class="xing.rujuan.EmailService"></bean>
 
-
+    <bean id="prototypeEmailService" class="xing.rujuan.EmailService" scope="prototype"></bean>
 </beans>
