@@ -48,6 +48,12 @@ public class Customer implements BeanNameAware , BeanFactoryAware, ApplicationCo
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println("afterPropertiesSet....");
         this.firstName = "Xing in afterPropertiesSet";
+    }
+
+    public void customInit(){
+        System.out.println("customInit....");
+        this.firstName = "Xing in customInit";
     }
 }

@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="cust" class="xing.rujuan.Customer" >
+    <bean id="cust" class="xing.rujuan.Customer" init-method="customInit">
         <constructor-arg name="firstName" value="Tina"/>
         <property name="firstName" value="Xing" />
     </bean>
