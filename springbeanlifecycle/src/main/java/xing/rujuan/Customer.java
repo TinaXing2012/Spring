@@ -7,7 +7,11 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
+@Component("cust")
 public class Customer implements BeanNameAware , BeanFactoryAware, ApplicationContextAware, InitializingBean {
 
     private String firstName;
@@ -52,6 +56,7 @@ public class Customer implements BeanNameAware , BeanFactoryAware, ApplicationCo
         this.firstName = "Xing in afterPropertiesSet";
     }
 
+    @PostConstruct
     public void customInit(){
         System.out.println("customInit....");
         this.firstName = "Xing in customInit";
