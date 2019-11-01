@@ -4,10 +4,11 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Customer implements BeanNameAware , BeanFactoryAware, ApplicationContextAware {
+public class Customer implements BeanNameAware , BeanFactoryAware, ApplicationContextAware, InitializingBean {
 
     private String firstName;
 
@@ -43,5 +44,10 @@ public class Customer implements BeanNameAware , BeanFactoryAware, ApplicationCo
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("setApplicationContext..." + applicationContext.isPrototype("cust"));
         this.firstName = "Xing in Application Contxt";
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        this.firstName = "Xing in afterPropertiesSet";
     }
 }
