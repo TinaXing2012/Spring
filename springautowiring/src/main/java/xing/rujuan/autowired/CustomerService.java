@@ -1,19 +1,22 @@
 package xing.rujuan.autowired;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CustomerService {
 
-//    @Autowired
+//    @Autowired(required = false)
+    @Autowired
+    @Qualifier("custDao")
     private CustomerDao customerDao;
 
     public CustomerService(){
         System.out.println("default constructor....");
     }
 
-    @Autowired
+//    @Autowired
     public CustomerService(CustomerDao customerDao) {
         System.out.println("customized constructor....");
         this.customerDao = customerDao;
