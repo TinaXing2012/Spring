@@ -7,5 +7,10 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="customerService" class="xing.rujuan.fourtypes.CustomerService" autowire="constructor"></bean>
+
+    <bean id="custDao" class="xing.rujuan.fourtypes.CustomerDao"></bean>
+    <bean id="customerDao2" class="xing.rujuan.fourtypes.CustomerDao"></bean>
+
 
 </beans>
