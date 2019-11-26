@@ -2,6 +2,7 @@ package xing.rujuan.aop.advices;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class LogAspect {
 
     @Before("execution(* xing.rujuan.aop.advices.AccountService.*(..))")
-    public void logBefore(JoinPoint joinPoint){
+    public void logBefore(JoinPoint joinPoint) {
         System.out.println("Log before executing...." + joinPoint.getSignature().getName());
         System.out.println(joinPoint.getTarget().getClass().getName());
         System.out.println("Args: " + joinPoint.getArgs()[0]);
@@ -19,7 +20,12 @@ public class LogAspect {
     }
 
     @After("execution(* xing.rujuan.aop.advices.CustomerService.*(..))")
-    public void logAfter(JoinPoint joinPoint){
+    public void logAfter(JoinPoint joinPoint) {
         System.out.println("Log After executing---");
+    }
+
+    @AfterReturning(pointcut = "execution(* *(..))", returning = "myname")
+    public void logAfterReturning(String myname) {
+        System.out.println("Return value: " + myname);
     }
 }

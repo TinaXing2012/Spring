@@ -9,4 +9,8 @@ public class CustomerServiceImpl implements CustomerService {
     public void doSomething() {
         System.out.println("Do Something in CustomerServiceImpl...");
     }
+
+    public String getName(){
+        return "Miss Xing";
+    }
 }
