@@ -15,7 +15,8 @@ public class App {
 //        AccountService accountService = context.getBean(AccountService.class);
 //        accountService.deposit(1000.00);
 
-        String returnName = customerService.getName();
-        System.out.println(returnName);
+//        String returnName = customerService.getName();
+//        System.out.println(returnName);
+        customerService.getAge();
     }
 }

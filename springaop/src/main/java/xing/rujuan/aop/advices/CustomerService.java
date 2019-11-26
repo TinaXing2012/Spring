@@ -5,4 +5,6 @@ public interface CustomerService {
     void doSomething();
 
     String getName();
+
+    String getAge();
 }

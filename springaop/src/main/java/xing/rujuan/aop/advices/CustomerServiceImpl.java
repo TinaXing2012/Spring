@@ -13,4 +13,8 @@ public class CustomerServiceImpl implements CustomerService {
     public String getName(){
         return "Miss Xing";
     }
+
+    public String getAge() {
+        throw new MyException("my exception...");
+    }
 }

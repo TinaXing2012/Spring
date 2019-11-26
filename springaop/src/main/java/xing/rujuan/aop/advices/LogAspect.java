@@ -1,10 +1,7 @@
 package xing.rujuan.aop.advices;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -27,5 +24,10 @@ public class LogAspect {
     @AfterReturning(pointcut = "execution(* *(..))", returning = "myname")
     public void logAfterReturning(String myname) {
         System.out.println("Return value: " + myname);
+    }
+
+    @AfterThrowing(pointcut = "execution(* getAge(..))", throwing="ex")
+    public void logAfterThrowing(JoinPoint joinPoint, MyException ex){
+        System.out.println(joinPoint.getSignature().getName() + " throws exception: " + ex.getMsg());
     }
 }
