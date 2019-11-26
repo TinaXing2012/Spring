@@ -10,11 +10,16 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println("Do Something in CustomerServiceImpl...");
     }
 
-    public String getName(){
+    public String getName() {
         return "Miss Xing";
     }
 
     public String getAge() {
         throw new MyException("my exception...");
+    }
+
+    public double calculatePayment(double rate, int hours) {
+        System.out.println("Rate: " + rate + ", hours: " + hours);
+        return rate * hours;
     }
 }
